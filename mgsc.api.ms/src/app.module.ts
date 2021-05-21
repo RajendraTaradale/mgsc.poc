@@ -6,11 +6,12 @@ import { MoviesController } from './controller/movies.controller';
 import { MovieRepository } from './repository/movie.repository';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpInterceptor } from './utils/HttpInterceptor';
+import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [],
   controllers: [AppController, MoviesController],
-  providers: [AppService, MovieService, MovieRepository,
+  providers: [AppService, MovieService, MovieRepository, AuthService,
     {
       provide: APP_INTERCEPTOR,
       useClass: HttpInterceptor,
