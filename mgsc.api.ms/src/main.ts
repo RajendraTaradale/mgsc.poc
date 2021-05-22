@@ -5,7 +5,7 @@ import { HttpInterceptor } from './utils/HttpInterceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalInterceptors(new HttpInterceptor());
+ app.enableCors(); app.useGlobalInterceptors(new HttpInterceptor());
 
   const config = new DocumentBuilder()
   .setTitle('MGSC API Movie Service ')
